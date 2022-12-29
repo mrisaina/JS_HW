@@ -1,15 +1,30 @@
 const logins = ["Mango", "robotGoogles", "Poly", "Aj4x1sBozz", "qwerty123"];
 
 const isLoginValid = function (login) {
-  // твій код
+  const logLength = login.split("").length;
+  const res = logLength >= 4 && logLength <= 16 ? true : false;
+  console.log(res);
+  return res;
 };
 
 const isLoginUnique = function (allLogins, login) {
-  // твій код
+  for (let log in allLogins) {
+    if (log === login) {
+      return false;
+    }
+  }
 };
 
 const addLogin = function (allLogins, login) {
-  // твій код
+  if (!isLoginValid(login)) {
+    return "Error! Login should be from 4 to 16 characters!";
+  }
+  if (!isLoginUnique(allLogins, login)) {
+    return "This login is already used!";
+  } else {
+    logins.push(login);
+    return "Login successfully added!";
+  }
 };
 
 /*
