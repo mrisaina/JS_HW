@@ -2,11 +2,9 @@ const checkForSpam = function (message) {
   if (
     message.toLowerCase().includes("sale") ||
     message.toLowerCase().includes("spam")
-  ) {
+  )
     return true;
-  } else {
-    return false;
-  }
+  return false;
 };
 
 /*
