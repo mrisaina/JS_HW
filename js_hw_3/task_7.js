@@ -76,8 +76,14 @@ const account = {
    * Метод шукає і повертає об'єкт транзакції по id
    */
   getTransactionDetails(id) {
+    let info;
     for (const transaction of this.transactions) {
-      if (transaction.id === id) return transaction;
+      if (transaction.id === id) {
+        info = transaction;
+      }
+      if (typeof info === "undefined")
+        return "There is no transaction with this id";
+      return info;
     }
   },
 
@@ -114,6 +120,7 @@ const account = {
 
 // console.log(account.getBalance());
 // console.log(account.getTransactionDetails(account.transactions[0]["id"]));
+// console.log(account.getTransactionDetails(12345));
 // ===============================
 // total amount by operation type
 // console.log(account.getTransactionTotal(Transaction.WITHDRAW));
