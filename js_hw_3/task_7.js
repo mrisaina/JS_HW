@@ -44,6 +44,9 @@ const account = {
     this.balance += amount;
     const newDeposit = this.createTransaction(amount, Transaction.DEPOSIT);
     this.transactions.push(newDeposit);
+    return `Deposit ${amount} with id ${
+      this.transactions[this.transactions.length - 1]["id"]
+    }`;
   },
 
   /*
@@ -62,7 +65,9 @@ const account = {
     this.balance -= amount;
     const newWidthdraw = this.createTransaction(amount, Transaction.WITHDRAW);
     this.transactions.push(newWidthdraw);
-    return this.transactions;
+    return `Withdraw ${amount} with id ${
+      this.transactions[this.transactions.length - 1]["id"]
+    }`;
   },
 
   /*
