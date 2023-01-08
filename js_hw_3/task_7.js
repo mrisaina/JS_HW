@@ -81,13 +81,12 @@ const account = {
    * Метод шукає і повертає об'єкт транзакції по id
    */
   getTransactionDetails(id) {
-    let info;
+    let info = null;
     for (const transaction of this.transactions) {
       if (transaction.id === id) {
         info = transaction;
       }
-      if (typeof info === "undefined")
-        return "There is no transaction with this id";
+      if (!info) return "There is no transaction with this id";
       return info;
     }
   },
