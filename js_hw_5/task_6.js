@@ -1,9 +1,7 @@
 import users from "./fixture/users.js";
 
 const getUsersWithAge = (users, min, max) => {
-  return users.filter(({ age }) => {
-    return age > min && age < max;
-  });
+  return users.filter(({ age }) => age > min && age < max);
 };
 
 console.log(getUsersWithAge(users, 20, 30)); // [об'єкт Ross Vazquez, об'єкт Elma Head, об'єкт Carey Barr]

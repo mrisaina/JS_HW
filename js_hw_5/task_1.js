@@ -1,9 +1,7 @@
 import users from "./fixture/users.js";
 
 const getUserNames = (users) => {
-  return users.map(({ name }) => {
-    return name;
-  });
+  return users.map(({ name }) => name);
 };
 
 console.log(getUserNames(users));

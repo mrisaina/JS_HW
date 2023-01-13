@@ -1,19 +1,22 @@
 import users from "./fixture/users.js";
 
 const getSortedUniqueSkills = (users) => {
-  const skills = [];
+  return users
+    .reduce((skillsGen, { skills }) => skillsGen.concat(...skills), [])
+    .sort()
+    .filter((skill, i, arr) => arr.indexOf(skill) === i);
 
-  users
-    .map(({ skills }) => skills)
-    .forEach((item) => {
-      item.forEach((skill) => {
-        skills.push(skill);
-      });
-    });
+  // users
+  //   .map(({ skills }) => skills)
+  //   .forEach((item) => {
+  //     item.forEach((skill) => {
+  //       skills.push(skill);
+  //     });
+  //   });
 
-  skills.sort();
+  // skills.sort();
 
-  return skills.filter((skill, i, arr) => arr.indexOf(skill) === i);
+  // return skills.filter((skill, i, arr) => arr.indexOf(skill) === i);
 };
 
 console.log(getSortedUniqueSkills(users));

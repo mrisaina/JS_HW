@@ -2,12 +2,8 @@ import users from "./fixture/users.js";
 
 const getNamesSortedByFriendsCount = (users) => {
   return users
-    .sort((start, end) => {
-      start.friends.length - end.friends.length;
-    })
-    .map(({ name }) => {
-      return name;
-    });
+    .sort((start, end) => start.friends.length - end.friends.length)
+    .map(({ name }) => name);
 };
 
 console.log(getNamesSortedByFriendsCount(users));
