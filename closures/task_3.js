@@ -4,7 +4,10 @@ let users = [
   { name: "Ann", age: 19, surname: "Hathaway" },
 ];
 
-// по имени (Ann, John, Pete)
+// by name (Ann, John, Pete)
+
+// question is here
+
 users.sort((a, b) => {
   return a.name > b.name ? 1 : -1;
 });
@@ -14,7 +17,7 @@ console.log(users);
 //     return (a, b) => a[field] > b[field] ? 1 : -1;
 //   }
 
-// // по возрасту (Pete, Ann, John)
+// // by age (Pete, Ann, John)
 
 // users.sort(byField("name"));
 // users.sort(byField("age"));
