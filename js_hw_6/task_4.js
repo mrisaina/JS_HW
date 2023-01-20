@@ -80,9 +80,11 @@ const builder = new StringBuilder(".");
 console.log(builder);
 
 console.log(builder.value);
+// console.log(builder.value());
 // builder.append = "^";
 builder.append("^");
 console.log(builder.value); // '.^'
+// console.log(builder.value());
 
 // builder.prepend = "^";
 builder.prepend("^");
